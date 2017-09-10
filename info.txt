@@ -1,0 +1,7 @@
+Name: WP-Recall Spoiler;
+Version: 1.0;
+Support Core: 16.6.10;
+Description: Спойлер для формы публикации и Prime Forum;
+Author: Владимир Дружаев (Otshelnik-Fm);
+Author URI: http://across-ocean.otshelnik-fm.ru/;
+Add-on URI: https://codeseller.ru/products/wp-recall-spoiler/;

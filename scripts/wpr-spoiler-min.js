@@ -1,0 +1,1 @@
+(function(){tinymce.PluginManager.add('wprs_spoiler',function(a,b){a.addButton('wprs_spoiler',{title:'WP-Recall Spoiler',icon:'icon wpr_spoiler',onclick:function(){a.insertContent('<details><summary>Спойлер</summary>Контент</details>')}})})})();
