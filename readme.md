@@ -1,6 +1,6 @@
 ## Описание:  
 
-Дополнение для WordPress плагина [WP-Recall](https://wordpress.org/plugins/wp-recall/) - добавляет в редактор публикации и в редактор форума [Prime Forum](https://codeseller.ru/products/primeforum/) (дополнение к плагину WP=Recall) кнопку "Спойлер"  
+Дополнение для WordPress плагина [WP-Recall](https://wordpress.org/plugins/wp-recall/) - добавляет в редактор публикации и в редактор форума [Prime Forum](https://codeseller.ru/products/primeforum/) (дополнение к плагину WP-Recall) кнопку "Спойлер"  
 
 ------------------------------
 
