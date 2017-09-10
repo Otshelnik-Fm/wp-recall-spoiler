@@ -44,11 +44,11 @@ add_filter('mce_css', 'wprs_tiny_mce_css');
 // кнопка в quicktag
 function wprs_quicktag_spoiler() {
     if (!wp_script_is('quicktags')) return false;
-    
+
     $out = '<script>';
         $out .= 'QTags.addButton("wpr-spoiler", "SpoileR", "<details><summary>Спойлер</summary>\nКонтент\n</details>\n", "", "", "WP-Recall Spoiler", 201);';
     $out .= '</script>';
-    
+
     echo $out;
 }
 add_action('admin_print_footer_scripts', 'wprs_quicktag_spoiler');
@@ -103,7 +103,7 @@ function wprs_filter_spoiler($content){
             '&lt;details open=&quot;&quot;&gt;',
             '&lt;summary&gt;',
             '&lt;/summary&gt;',
-        ), 
+        ),
         array(
             '<details>',
             '</details>',
@@ -111,17 +111,19 @@ function wprs_filter_spoiler($content){
             '<summary>',
             '</summary>',
         ), $content);
-    
+
     return $content;
-    
+
 }
 add_filter('pfm_filter_content_without_pretags','wprs_filter_spoiler',10);
 
 
 // скрипт-полифил для edge и ie
 // https://github.com/rstacruz/details-polyfill
-// единственое что - закоментил стили ::before добавляющие треугольник. У  меня свои иконки
+// закоментил стили ::before добавляющие треугольник. У  меня свои иконки
 // upd: выкинул вообще все стили
+// upd: нет ; у окончания строк. из-за этого в edge были ошибки. Исправил
+// пакую этим пакером http://dean.edwards.name/packer/
 function iess_support(){
     global $is_edge,$is_IE;
     if($is_edge || $is_IE){
