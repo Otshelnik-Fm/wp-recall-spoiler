@@ -6,7 +6,7 @@
 
 ## Demo:  
 
-Демонстрация работы: [здесь](http://across-ocean.otshelnik-fm.ru/wp-recall-spoiler/)  
+Демонстрация работы: [здесь](https://otshelnik-fm.ru/wp-recall-spoiler/)  
 Скриншоты: в [каталоге дополнений WP-Recall](https://codeseller.ru/products/wp-recall-spoiler/)  
 
 ------------------------------
