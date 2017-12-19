@@ -14,6 +14,12 @@
 
 
 == Changelog ==
+= 2017-12-19 =
+v1.1
+*  визуальный редактор Tiny MCE елемент (html тег) <details> не считает за блочный элемент и добавляет неразрывный пробел &nbsp; при переключении из редактора визуального в текстовый.
+Временным хаком пришлось обернуть спойлер в тег div. Разработчиков редактора я уведомил - но когда появится решение неизвестно.
+
+
 = 2017-10-20 =
 v1.0.1
 *  корректировка стилей
@@ -30,4 +36,4 @@ v1.0
 * При возникновении проблемы, создайте соотвествующую тему на <a href="https://codeseller.ru/forum/product-15814/" target="_blank">форуме поддержки товара</a>  
 * Если вам нужна доработка под ваши нужды - вы можете обратиться ко мне в <a href="https://codeseller.ru/author/otshelnik-fm/?tab=chat" target="_blank">ЛС</a> с техзаданием на платную доработку.
 
-Полный список моих работ опубликован <a href="http://across-ocean.otshelnik-fm.ru/" target="_blank">на моем демо-сайте</a> и в каталоге магазина <a href="https://codeseller.ru/author/otshelnik-fm/?tab=publics&subtab=type-products" target="_blank">CodeSeller.ru</a>
+Полный список моих работ опубликован <a href="https://otshelnik-fm.ru/all-my-addons-for-wp-recall/" target="_blank">моём сайте</a> и в каталоге магазина <a href="https://codeseller.ru/author/otshelnik-fm/?tab=publics&subtab=type-products" target="_blank">CodeSeller.ru</a>

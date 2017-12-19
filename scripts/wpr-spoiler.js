@@ -4,7 +4,7 @@
             title: 'WP-Recall Spoiler',
             icon: 'icon wpr_spoiler',
             onclick: function() {
-                editor.insertContent('<details><summary>Спойлер</summary>Контент</details>');
+                editor.insertContent('<div class="otfm_spoiler"><details><summary>Спойлер</summary>Контент</details></div>');
             }
         });
     });

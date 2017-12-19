@@ -1,5 +1,13 @@
 <?php
 
+/*
+
+╔═╗╔╦╗╔═╗╔╦╗
+║ ║ ║ ╠╣ ║║║ https://otshelnik-fm.ru
+╚═╝ ╩ ╚  ╩ ╩
+
+*/
+
 // подключаем стили
 function wprs_style(){
     rcl_enqueue_style('wprs_style',rcl_addon_url('wpr-spoiler.css', __FILE__));
@@ -46,7 +54,7 @@ function wprs_quicktag_spoiler() {
     if (!wp_script_is('quicktags')) return false;
 
     $out = '<script>';
-        $out .= 'QTags.addButton("wpr-spoiler", "SpoileR", "<details><summary>Спойлер</summary>\nКонтент\n</details>\n", "", "", "WP-Recall Spoiler", 201);';
+        $out .= 'QTags.addButton("wpr-spoiler", "SpoileR", "<div class=\"otfm_spoiler\"><details><summary>Спойлер</summary>\nКонтент\n</details></div>\n", "", "", "WP-Recall Spoiler", 201);';
     $out .= '</script>';
 
     echo $out;
@@ -71,6 +79,7 @@ add_action('admin_head', 'wprs_tiny_spoiler');
 add_action('wp_head', 'wprs_tiny_spoiler');
 
 
+// great packer http://dean.edwards.name/packer/
 function wprs_tiny_script($plugin_array) {
     $plugin_array['wprs_spoiler'] = rcl_addon_url('scripts/wpr-spoiler-min.js', __FILE__);
     return $plugin_array;
