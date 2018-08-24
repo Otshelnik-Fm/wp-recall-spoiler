@@ -1,5 +1,5 @@
 Name: WP-Recall Spoiler;
-Version: 1.1;
+Version: 1.1.1;
 Support Core: 16.9.0;
 Description: Спойлер для формы публикации и Prime Forum;
 Author: Владимир Дружаев (Otshelnik-Fm);

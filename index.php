@@ -53,11 +53,15 @@ add_filter('mce_css', 'wprs_tiny_mce_css');
 function wprs_quicktag_spoiler() {
     if (!wp_script_is('quicktags')) return false;
 
-    $out = '<script>';
-        $out .= 'QTags.addButton("wpr-spoiler", "SpoileR", "<div class=\"otfm_spoiler\"><details><summary>Спойлер</summary>\nКонтент\n</details></div>\n", "", "", "WP-Recall Spoiler", 201);';
-    $out .= '</script>';
+    $out = '
+function wprs_spoiler(){
+    return QTags.addButton("wpr-spoiler", "SpoileR", "<div class=\"otfm_spoiler\"><details><summary>Спойлер</summary>\nКонтент\n</details></div>\n", "", "", "WP-Recall Spoiler", 201);
+}
+rcl_add_action("rcl_footer", "wprs_spoiler");
+rcl_add_action("rcl_pre_init_ajax_editor", "wprs_spoiler");
+';
 
-    echo $out;
+    echo '<script>' . $out . '</script>';
 }
 add_action('admin_print_footer_scripts', 'wprs_quicktag_spoiler');
 if(!is_admin()){

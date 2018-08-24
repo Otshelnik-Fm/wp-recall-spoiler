@@ -1,3 +1,5 @@
+/* global tinymce */
+
 (function() {
     tinymce.PluginManager.add('wprs_spoiler', function( editor, url ) {
         editor.addButton( 'wprs_spoiler', {
