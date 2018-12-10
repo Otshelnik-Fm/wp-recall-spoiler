@@ -8,20 +8,22 @@
 
 */
 
+if (!defined('ABSPATH')) exit;
+
 // подключаем стили
 function wprs_style(){
-    rcl_enqueue_style('wprs_style',rcl_addon_url('wpr-spoiler.css', __FILE__));
+    rcl_enqueue_style( 'wprs_style', rcl_addon_url('wpr-spoiler.css', __FILE__) );
 }
 if(!is_admin()){
-    add_action('rcl_enqueue_scripts','wprs_style',10);
+    add_action('rcl_enqueue_scripts', 'wprs_style', 10);
 }
 
-// в админке
+
 function wprs_style_admin(){
     global $current_screen;
 
     if( $current_screen->base === 'post' && $current_screen->parent_base === 'edit' ){ // мы на странице редактирования поста
-        if ( !current_user_can('edit_posts') && !current_user_can('edit_pages') ) return false;
+        if ( !current_user_can('edit_posts') && !current_user_can('edit_pages') ) return;
 
         if ( get_user_option('rich_editing') == 'true' ){
             $style = '.mce-btn button i.wpr_spoiler {
@@ -33,7 +35,18 @@ function wprs_style_admin(){
         }
     }
 }
-add_action('admin_footer','wprs_style_admin',10);
+add_action('admin_footer', 'wprs_style_admin', 10);
+
+
+function wprs_page_settings(){
+    $chr_page = get_current_screen();
+
+    if($chr_page->base != 'wp-recall_page_rcl-options') return;
+    if( isset($_COOKIE['otfmi_1']) && isset($_COOKIE['otfmi_2']) && isset($_COOKIE['otfmi_3']) )  return;
+
+    require_once 'admin/for-settings.php';
+}
+add_action('admin_footer', 'wprs_page_settings');
 
 
 // добавим стили для просмотра в окне редактирования визуального редактора
@@ -51,7 +64,7 @@ add_filter('mce_css', 'wprs_tiny_mce_css');
 
 // кнопка в quicktag
 function wprs_quicktag_spoiler() {
-    if (!wp_script_is('quicktags')) return false;
+    if ( !wp_script_is('quicktags') ) return;
 
     $out = '
 function wprs_spoiler(){
@@ -72,9 +85,9 @@ if(!is_admin()){
 // кнопка в tinyMce
 // great tutorial https://www.gavick.com/blog/wordpress-tinymce-custom-buttons
 function wprs_tiny_spoiler(){
-    if ( !current_user_can('edit_posts') && !current_user_can('edit_pages') ) return false;
+    if ( !current_user_can('edit_posts') && !current_user_can('edit_pages') ) return;
 
-    if ( get_user_option('rich_editing') == 'true') {
+    if ( get_user_option('rich_editing') == 'true' ) {
         add_filter('mce_external_plugins', 'wprs_tiny_script');
         add_filter('mce_buttons', 'wprs_register_tiny_button');
     }
@@ -86,10 +99,12 @@ add_action('wp_head', 'wprs_tiny_spoiler');
 // great packer http://dean.edwards.name/packer/
 function wprs_tiny_script($plugin_array) {
     $plugin_array['wprs_spoiler'] = rcl_addon_url('scripts/wpr-spoiler-min.js', __FILE__);
+
     return $plugin_array;
 }
 function wprs_register_tiny_button($buttons) {
    array_push($buttons, 'wprs_spoiler');
+
    return $buttons;
 }
 
@@ -128,7 +143,7 @@ function wprs_filter_spoiler($content){
     return $content;
 
 }
-add_filter('pfm_filter_content_without_pretags','wprs_filter_spoiler',10);
+add_filter('pfm_filter_content_without_pretags', 'wprs_filter_spoiler', 10);
 
 
 // скрипт-полифил для edge и ie
@@ -138,9 +153,10 @@ add_filter('pfm_filter_content_without_pretags','wprs_filter_spoiler',10);
 // upd: нет ; у окончания строк. из-за этого в edge были ошибки. Исправил
 // пакую этим пакером http://dean.edwards.name/packer/
 function iess_support(){
-    global $is_edge,$is_IE;
+    global $is_edge, $is_IE;
+
     if($is_edge || $is_IE){
-        wp_enqueue_script('wprs_scr',rcl_addon_url('scripts/wpr-spoiler-ie-min.js', __FILE__));
+        wp_enqueue_script( 'wprs_scr', rcl_addon_url('scripts/wpr-spoiler-ie-min.js', __FILE__) );
     }
 }
 add_action('wp_enqueue_scripts', 'iess_support');

@@ -14,6 +14,12 @@
 
 
 == Changelog ==
+= 2018-12-10 =
+v1.2.0
+* поддержка WP-Recall 16.17.0
+* небольшие правки
+
+
 = 2018-08-25 =
 v1.1.1
 * Кнопки спойлера не было при редактировании сообщения PrimeForum. Добавил
@@ -41,4 +47,4 @@ v1.0
 * При возникновении проблемы, создайте соотвествующую тему на <a href="https://codeseller.ru/forum/product-15814/" target="_blank">форуме поддержки товара</a>  
 * Если вам нужна доработка под ваши нужды - вы можете обратиться ко мне в <a href="https://codeseller.ru/author/otshelnik-fm/?tab=chat" target="_blank">ЛС</a> с техзаданием на платную доработку.
 
-Полный список моих работ опубликован <a href="https://otshelnik-fm.ru/all-my-addons-for-wp-recall/" target="_blank">моём сайте</a> и в каталоге магазина <a href="https://codeseller.ru/author/otshelnik-fm/?tab=publics&subtab=type-products" target="_blank">CodeSeller.ru</a>
+Все мои работы опубликованы <a href="https://otshelnik-fm.ru/?p=2562&utm_source=free-addons&utm_medium=addon-description&utm_campaign=wp-recall-spoiler&utm_content=codeseller.ru&utm_term=all-my-addons" target="_blank">на моём сайте</a> и в каталоге магазина <a href="https://codeseller.ru/author/otshelnik-fm/?tab=publics&subtab=type-products" target="_blank">CodeSeller.ru</a>
